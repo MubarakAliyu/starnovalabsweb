@@ -161,7 +161,7 @@ export function ContactPage() {
               {/* Contact Cards */}
               <div className="space-y-4">
                 <motion.a
-                  href="mailto:hello@starnovalabs.com"
+                  href="mailto:starnovalabs@gmail.com"
                   whileHover={{ x: 8 }}
                   className="group flex items-start gap-4 p-6 glass-card rounded-xl hover:border-primary/60 transition-all"
                 >
@@ -172,7 +172,7 @@ export function ContactPage() {
                     <h4 className="text-foreground font-semibold mb-1">
                       {lang === 'en' ? 'Email Us' : 'Aika Mana Imel'}
                     </h4>
-                    <p className="text-sm text-muted-foreground">hello@starnovalabs.com</p>
+                    <p className="text-sm text-muted-foreground">starnovalabs@gmail.com</p>
                   </div>
                 </motion.a>
 
@@ -187,7 +187,7 @@ export function ContactPage() {
                     <h4 className="text-foreground font-semibold mb-1">
                       {lang === 'en' ? 'Call Us' : 'Kira Mu'}
                     </h4>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">+234 706 783 4186</p>
                   </div>
                 </motion.div>
 

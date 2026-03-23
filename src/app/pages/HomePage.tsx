@@ -502,7 +502,7 @@ export function HomePage() {
             {...fadeInUp}
             className="mt-12 flex items-center justify-center gap-8"
           >
-            <a href="mailto:hello@starnovalabs.com" className="text-foreground/70 hover:text-primary transition-colors">
+            <a href="mailto:starnovalabs@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </motion.div>
