@@ -92,7 +92,7 @@ export function Footer() {
             </h4>
             <div className="flex gap-4 mb-4">
               <a
-                href="mailto:hello@starnovalabs.com"
+                href="mailto:starnovalabs@gmail.com"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-foreground/60 hover:text-primary transition-all"
                 aria-label="Email"
               >
@@ -121,10 +121,10 @@ export function Footer() {
               </a>
             </div>
             <a
-              href="mailto:hello@starnovalabs.com"
+              href="mailto:starnovalabs@gmail.com"
               className="text-sm text-foreground/60 hover:text-primary transition-colors"
             >
-              hello@starnovalabs.com
+              starnovalabs@gmail.com
             </a>
           </div>
         </div>
