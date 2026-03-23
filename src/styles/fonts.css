@@ -1,0 +1,43 @@
+/* Montserrat for body text */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* PolySans Wide - Local font files (primary) */
+@font-face {
+  font-family: 'PolySans Wide';
+  src: url('../fonts/PolySansTrial-SlimWide.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PolySans Wide';
+  src: url('../fonts/PolySansTrial-NeutralWide.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PolySans Wide';
+  src: url('../fonts/PolySansTrial-MedianWide.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PolySans Wide';
+  src: url('../fonts/PolySansTrial-BulkyWide.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PolySans Wide - CDN fallbacks */
+@import url('https://fonts.cdnfonts.com/css/polysans-trial');
+@import url('https://fonts.cdnfonts.com/css/polysans-wide');
+
+/* Additional fallback fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
