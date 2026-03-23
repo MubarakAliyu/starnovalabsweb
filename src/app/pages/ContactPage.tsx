@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, Send, Linkedin, Twitter, Github } from 'lucide-react';
 import { TechDotsBackground } from '../components/TechDotsBackground';
 import { useState } from 'react';
@@ -17,17 +18,41 @@ export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { lang } = useLanguage();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success('Thank you! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  // ✅ ADD IT RIGHT HERE
+  if (!formData.name || !formData.email || !formData.message) {
+    toast.error("Please fill all required fields");
     setIsSubmitting(false);
-  };
+    return;
+  }
+
+  try {
+    await emailjs.send(
+      "service_i967wgj",
+      "template_q09ei2i",
+      {
+        user_name: formData.name,
+        user_email: formData.email,
+        company: formData.company,
+        message: formData.message,
+      },
+      "6_I2CCPj-ovKIBmK6"
+    );
+
+    toast.success("Message sent successfully 🚀");
+
+    setFormData({ name: '', email: '', company: '', message: '' });
+
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to send message ❌");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="min-h-screen pt-20">
@@ -78,6 +103,7 @@ export function ContactPage() {
                   <input
                     type="text"
                     id="name"
+                    name="user_name" // ✅ this name should match the variable in your email template
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -93,6 +119,7 @@ export function ContactPage() {
                   <input
                     type="email"
                     id="email"
+                    name="user_email" // ✅ this name should match the variable in your email template
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -108,6 +135,7 @@ export function ContactPage() {
                   <input
                     type="text"
                     id="company"
+                    name="company" // ✅ this name should match the variable in your email template
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full glass-input px-6 py-4 text-foreground placeholder:text-foreground/40"
@@ -121,6 +149,7 @@ export function ContactPage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message" // ✅ this name should match the variable in your email template
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required

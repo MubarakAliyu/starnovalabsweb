@@ -47,10 +47,30 @@ export function HomePage() {
   }, [fullTitle]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success('Thank you! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  e.preventDefault();
+
+  // validation
+  if (!formData.name || !formData.email || !formData.message) {
+    toast.error("Please fill all fields");
+    return;
+  }
+
+  const subject = encodeURIComponent(`New message from ${formData.name}`);
+
+  const body = encodeURIComponent(
+    `Name: ${formData.name}\n` +
+    `Email: ${formData.email}\n\n` +
+    `Message:\n${formData.message}`
+  );
+
+  const mailtoLink = `mailto:starnovalabs@gmail.com?subject=${subject}&body=${body}`;
+
+  window.location.href = mailtoLink;
+
+  toast.success("Opening your email app ✉️");
+
+  setFormData({ name: '', email: '', message: '' });
+};
 
   return (
     <div className="min-h-screen">
