@@ -63,7 +63,7 @@ export function HomePage() {
     `Message:\n${formData.message}`
   );
 
-  const mailtoLink = `mailto:starnovalabs@gmail.com?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:info@starnovalabs.com?subject=${subject}&body=${body}`;
 
   window.location.href = mailtoLink;
 
@@ -522,7 +522,7 @@ export function HomePage() {
             {...fadeInUp}
             className="mt-12 flex items-center justify-center gap-8"
           >
-            <a href="mailto:starnovalabs@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
+            <a href="mailto:info@starnovalabs.com" className="text-foreground/70 hover:text-primary transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </motion.div>

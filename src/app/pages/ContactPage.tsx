@@ -190,7 +190,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               {/* Contact Cards */}
               <div className="space-y-4">
                 <motion.a
-                  href="mailto:starnovalabs@gmail.com"
+                  href="mailto:info@starnovalabs.com"
                   whileHover={{ x: 8 }}
                   className="group flex items-start gap-4 p-6 glass-card rounded-xl hover:border-primary/60 transition-all"
                 >
@@ -201,7 +201,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <h4 className="text-foreground font-semibold mb-1">
                       {lang === 'en' ? 'Email Us' : 'Aika Mana Imel'}
                     </h4>
-                    <p className="text-sm text-muted-foreground">starnovalabs@gmail.com</p>
+                    <p className="text-sm text-muted-foreground">info@starnovalabs.com</p>
                   </div>
                 </motion.a>
 
